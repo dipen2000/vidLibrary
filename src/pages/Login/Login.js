@@ -2,6 +2,8 @@ import "./Login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
+import { loginService } from "../../services/Auth/loginService";
+import { useUserContext } from "../../contexts/UserContext";
 const Login = () => {
   const [error, setError] = useState();
   const [loginInput, setLoginInput] = useState({
@@ -9,6 +11,8 @@ const Login = () => {
     hide: { pwd: true },
   });
   const navigate = useNavigate();
+  // console.log(useUserContext());
+  const { setIsUserLoggedIn, userDataDispatch } = useUserContext();
 
   const loginInputHandler = (e) => {
     const { name, value } = e.target;
@@ -28,7 +32,18 @@ const Login = () => {
     <>
       <Navbar />
       <section>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            loginService({
+              setError,
+              data: loginInput.input,
+              userDataDispatch,
+              setIsUserLoggedIn,
+              navigate,
+            });
+          }}
+        >
           <h2>Login</h2>
           <input
             type="email"
@@ -58,6 +73,13 @@ const Login = () => {
           </span>
           <br />
           <button className="curs-point">login</button>
+          <br />
+          <button
+            className="curs-point"
+            onClick={() => setLoginInput({ ...loginInput, input: guestLogin })}
+          >
+            Guest login
+          </button>
           <p>
             New to SHOETUBE? <Link to="/signup">Create new account</Link>
           </p>
