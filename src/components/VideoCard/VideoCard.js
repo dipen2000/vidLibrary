@@ -1,13 +1,16 @@
 import "./VideoCard.css";
-const VideoCard = () => {
+const VideoCard = ({ video, children }) => {
+  const { title, creator, img_src, views } = video;
   return (
     <div className="video-card-container flex-col">
-      <div className="thumbnail-container">thumbnail here</div>
+      <div className="thumbnail-container">
+        <img src={img_src} className="img-resp" alt={`${title} ${creator}`} />
+      </div>
       <div className="flex-col video-details">
-        <strong>Video name here.</strong>
+        <strong>{title}</strong>
         <div className="flex-row justify-space-between-flex">
-          <p>by channel name</p>
-          <p>20M views</p>
+          <p>by {creator}</p>
+          <p>{views} views</p>
         </div>
 
         <div className="flex-row justify-space-between-flex">
