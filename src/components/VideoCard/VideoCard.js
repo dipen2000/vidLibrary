@@ -1,5 +1,6 @@
 import "./VideoCard.css";
 import { LikeButton } from "../buttons/LikeButton";
+import { WatchLaterButton } from "../buttons/WatchLaterButton";
 const VideoCard = ({ video, children }) => {
   const { title, creator, img_src, views } = video;
   return (
@@ -18,8 +19,9 @@ const VideoCard = ({ video, children }) => {
           <button>play</button>
           <div className="flex-row">
             <button>add to playlist</button>
-            <button>add to watch later</button>
             <LikeButton video={video} />
+            <SaveButton video={video} />
+            <WatchLaterButton video={video} />
           </div>
         </div>
       </div>

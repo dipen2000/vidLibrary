@@ -19,7 +19,7 @@ const Liked = () => {
           <section className="flex-col">
             <div>Liked videos ({likedList.length})</div>
             {likedList.length === 0 ? (
-              <EmptyListPage text={"No videos here"} />
+              <EmptyListPage text={"No liked videos here"} />
             ) : (
               <div className="video-listing-container">
                 {likedList.map((video) => {
