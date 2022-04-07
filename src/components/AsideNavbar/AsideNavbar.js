@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useVideoState } from "../../contexts/videoStateContext";
 import "./AsideNavbar.css";
 const AsideNavbar = () => {
+  const {
+    videoState: { likedList },
+  } = useVideoState();
   return (
     <aside className="aside-container">
       <div className="flex-col side-nav-section">
@@ -12,7 +16,7 @@ const AsideNavbar = () => {
             <Link to="/playlist">Playlists</Link>
           </li>
           <li>
-            <Link to="/liked">Liked</Link>
+            <Link to="/liked">Liked ({likedList.length})</Link>
           </li>
           <li>
             <Link to="/watch-later">Watch later</Link>
