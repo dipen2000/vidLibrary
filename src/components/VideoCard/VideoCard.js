@@ -1,6 +1,8 @@
 import "./VideoCard.css";
 import { LikeButton } from "../buttons/LikeButton";
 import { WatchLaterButton } from "../buttons/WatchLaterButton";
+import { SaveButton } from "../buttons/SaveButton";
+import { PlayButton } from "../buttons/PlayButton";
 const VideoCard = ({ video, children }) => {
   const { title, creator, img_src, views } = video;
   return (
@@ -16,9 +18,8 @@ const VideoCard = ({ video, children }) => {
         </div>
 
         <div className="flex-row justify-space-between-flex">
-          <button>play</button>
+          <PlayButton video={video} />
           <div className="flex-row">
-            <button>add to playlist</button>
             <LikeButton video={video} />
             <SaveButton video={video} />
             <WatchLaterButton video={video} />

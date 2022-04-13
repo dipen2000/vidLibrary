@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext";
 import { VideoFilterProvider } from "./contexts/videoFilterContext/videoFilterContext";
 import { VideoStateProvider } from "./contexts/videoStateContext";
+import { PlaylistModalProvider } from "./contexts/PlaylistModalContext";
 
 // Call make Server
 makeServer();
@@ -17,7 +18,9 @@ ReactDOM.render(
       <UserProvider>
         <VideoStateProvider>
           <VideoFilterProvider>
-            <App />
+            <PlaylistModalProvider>
+              <App />
+            </PlaylistModalProvider>
           </VideoFilterProvider>
         </VideoStateProvider>
       </UserProvider>

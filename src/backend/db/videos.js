@@ -9,7 +9,7 @@ export const videos = [
     _id: uuid(),
     img_src:
       "https://i.ytimg.com/vi/n-f8udP21Jg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCR2qXKGpawxcSf09E7vKmqf7gGBg",
-    url: "https://www.youtube.com/watch?v=n-f8udP21Jg",
+    url: "https://www.youtube.com/embed/n-f8udP21Jg",
     title: "Air Jordan Commercials (1986-2020)",
     creator: "Piotrekz Productions",
     views: "1.7M",
@@ -22,7 +22,7 @@ export const videos = [
     _id: uuid(),
     img_src:
       "https://i.ytimg.com/vi/fYBCkz06vmQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCeSASJQw0E4Dz8ee7hddS-dazQJw",
-    url: "https://www.youtube.com/watch?v=fYBCkz06vmQ",
+    url: "https://www.youtube.com/embed/fYBCkz06vmQ",
     title: "Kobe Bryant EVERY Nike Shoe Commercial",
     creator: "Piotrekz Productions",
     views: "820K",
@@ -35,7 +35,7 @@ export const videos = [
     _id: uuid(),
     img_src:
       "https://i.ytimg.com/vi/I4CoEqIvOiQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDZ4UJ6IsaqcZkbq3wFdFmB21iQsQ",
-    url: "https://www.youtube.com/watch?v=I4CoEqIvOiQ",
+    url: "https://www.youtube.com/embed/I4CoEqIvOiQ",
     title: "NYC's Most Influential Sneakers",
     creator: "Complex",
     views: "829K",
@@ -48,7 +48,7 @@ export const videos = [
     _id: uuid(),
     img_src:
       "https://i.ytimg.com/vi/hViOYZVMiWs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCr2fmQKtd1JYX5rrK9DtQrRtROLA",
-    url: "https://www.youtube.com/watch?v=hViOYZVMiWs",
+    url: "https://www.youtube.com/embed/hViOYZVMiWs",
     title: "Nike Adapt BB Unboxing",
     creator: "Unbox therapy",
     views: "5M",
@@ -61,7 +61,7 @@ export const videos = [
     _id: uuid(),
     img_src:
       "https://i.ytimg.com/vi/0jvt8Js0OU0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQv-G6KiBTpfNiO8LFTThExeLB9A",
-    url: "https://www.youtube.com/watch?v=0jvt8Js0OU0",
+    url: "https://www.youtube.com/embed/0jvt8Js0OU0",
     title: "Cristiano Ronaldo Goes Sneaker Shopping",
     creator: "Complex",
     views: "33.3M",
