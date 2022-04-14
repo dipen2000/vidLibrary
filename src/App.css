@@ -1,3 +1,7 @@
+:root{
+  --white-background : #FDEFF4;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

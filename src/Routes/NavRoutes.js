@@ -25,7 +25,7 @@ const NavRoutes = () => {
       <Route path="/history" element={<History />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
-      <Route path="/signup" element={<Signup />} />
+      {/* <Route path="/signup" element={<Signup />} /> */}
       <Route path="*" element={<Page404 />} />
     </Routes>
   );

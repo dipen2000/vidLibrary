@@ -80,9 +80,6 @@ const Login = () => {
           >
             Guest login
           </button>
-          <p>
-            New to SHOETUBE? <Link to="/signup">Create new account</Link>
-          </p>
           <div className="error-message">{error}</div>
         </form>
       </section>
