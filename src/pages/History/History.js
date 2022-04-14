@@ -6,11 +6,13 @@ import { clearHistory } from "../../services/History/clearHistory";
 import { removeFromHistory } from "../../services/History/removeFromHistory";
 import { EmptyListPage } from "../../components/EmptyListPage/EmptyListPage";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
+import { useNavigate } from "react-router-dom";
 const History = () => {
   const {
     videoState: { history },
     videoStateDispatch,
   } = useVideoState();
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -23,7 +25,9 @@ const History = () => {
               Clear all history
             </button>
             {history.length === 0 ? (
-              <EmptyListPage text={"No videos here in history."} />
+              <EmptyListPage text={"No videos here in history."}>
+                <button onClick={() => navigate("/")}>Explore</button>
+              </EmptyListPage>
             ) : (
               <div className="video-listing-container">
                 {history.map((video) => {

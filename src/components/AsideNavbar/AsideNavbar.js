@@ -3,7 +3,7 @@ import { useVideoState } from "../../contexts/videoStateContext";
 import "./AsideNavbar.css";
 const AsideNavbar = () => {
   const {
-    videoState: { likedList, watchLater, history },
+    videoState: { likedList, watchLater, history, playLists },
   } = useVideoState();
   return (
     <aside className="aside-container">
@@ -13,7 +13,7 @@ const AsideNavbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/playlist">Playlists</Link>
+            <Link to="/playlist">Playlists ({playLists.length})</Link>
           </li>
           <li>
             <Link to="/liked">Liked ({likedList.length})</Link>

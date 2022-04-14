@@ -5,7 +5,7 @@ import { addToPlaylist } from "../../services/playlist/addToPlaylist";
 import { removeFromPlaylist } from "../../services/playlist/removeFromPlaylist";
 import { createPlaylist } from "../../services/playlist/createPlaylist";
 import { inPlaylist } from "../../utils/videoUtil";
-
+import "./PlaylistModal.css";
 const PlaylistModal = () => {
   const {
     videoState: { playLists },
@@ -52,8 +52,15 @@ const PlaylistModal = () => {
 
   return (
     <section className="flex-col modal-section-overlay">
-      <button>x</button>
-      <div className="flex-col">
+      <div className="flex-col modal-container">
+        <button
+          onClick={() => {
+            setDisplayModal(false);
+            setVideo(undefined);
+          }}
+        >
+          x
+        </button>
         <h3>Playlist</h3>
         <div className="flex-col">
           {video &&
@@ -96,7 +103,7 @@ const PlaylistModal = () => {
                 setPlaylist({ ...playlist, desc: e.target.value })
               }
             />
-            <button>Create playlist</button>
+            <button type="submit">Create playlist</button>
           </form>
         ) : (
           <button onClick={() => setShowCreatePlaylistForm(true)}>
