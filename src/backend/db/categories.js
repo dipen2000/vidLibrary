@@ -14,21 +14,17 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Sneaker ads",
-    category: "SNEAKER_ADS",
   },
   {
     _id: uuid(),
     categoryName: "Sneaker origins",
-    category: "SNEAKER_ORIGINS",
   },
   {
     _id: uuid(),
     categoryName: "Sneaker unboxing",
-    category: "SNEAKER_UNBOXING",
   },
   {
     _id: uuid(),
     categoryName: "Sneaker shopping",
-    category: "SNEAKER_SHOPPING",
   },
 ];

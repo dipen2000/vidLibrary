@@ -27,3 +27,10 @@
 .margin-sides-auto {
   margin: 0 auto;
 }
+
+.grid-container {
+  display: grid;
+  border: 3px solid yellow;
+  grid-template-columns: 26rem minmax(0, 1fr);
+  grid-template-rows: 1fr;
+}

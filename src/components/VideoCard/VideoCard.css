@@ -1,0 +1,17 @@
+.video-card-container {
+  border: 3px solid red;
+}
+
+.video-card-container {
+  width: 30rem;
+}
+
+.thumbnail-container {
+  border: 2px solid green;
+  width: 100%;
+  height: 15rem;
+}
+
+.video-details {
+  border: 3px solid purple;
+}

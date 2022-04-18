@@ -1,0 +1,10 @@
+.aside-container {
+  border: 3px solid purple;
+}
+
+.side-nav-section {
+  border: 3px solid red;
+  /* height: 100vh; */
+  height: 90vh;
+  position: fixed;
+}
