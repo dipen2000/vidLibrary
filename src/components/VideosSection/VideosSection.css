@@ -1,0 +1,20 @@
+.video-section-container {
+  border: 3px solid green;
+}
+
+.chips-container {
+  border: 3px solid blue;
+}
+
+.chips-position {
+  position: sticky;
+  top: 7rem;
+}
+
+.grid-item {
+  border: 3px solid red;
+}
+
+.active {
+  background-color: yellow;
+}

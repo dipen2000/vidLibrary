@@ -1,0 +1,10 @@
+.playlist-page-video-card-container{
+    border : 3px solid red;
+    width : 30rem;
+}
+
+.playlist-page-card-thumbnail-container{
+    border: 2px solid green;
+  width: 100%;
+  height: 15rem;
+}
