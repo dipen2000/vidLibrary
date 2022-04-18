@@ -1,0 +1,29 @@
+.video-section-container {
+  border: 3px solid green;
+}
+
+.chips-container {
+  border: 3px solid blue;
+}
+
+.chips-position {
+  position: sticky;
+  top: 7rem;
+}
+
+.video-listing-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-row-gap: 2rem;
+  padding: 4rem;
+  border: 3px solid black;
+}
+
+.grid-item {
+  border: 3px solid red;
+}
+
+.active {
+  background-color: yellow;
+}
