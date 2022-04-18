@@ -27,3 +27,19 @@
 .margin-sides-auto {
   margin: 0 auto;
 }
+
+.grid-container {
+  display: grid;
+  border: 3px solid yellow;
+  grid-template-columns: 26rem minmax(0, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.video-listing-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-row-gap: 2rem;
+  padding: 4rem;
+  border: 3px solid black;
+}
