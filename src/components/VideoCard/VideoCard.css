@@ -1,0 +1,17 @@
+.video-card-container {
+  width: 30rem;
+}
+
+.thumbnail-container {
+  width: 100%;
+  height: 15rem;
+}
+
+
+.video-desc-font{
+  font-family : var(--component-heading-font);
+}
+
+.video-card-desc-container{
+  padding : 0.5rem;
+}

@@ -1,0 +1,19 @@
+
+
+.side-nav-section {
+  border-right: 3px solid var(--shoe-tube-black);
+  padding : 2rem;
+  width : 26rem;
+  height: 80vh;
+  font-family: var(--component-heading-font);
+  position: fixed;
+}
+
+.aside-list{
+  padding : 0.5rem 0;
+  margin-bottom: 0.8rem;
+}
+
+.aside-list:hover{
+  border-bottom: 2px solid black;
+}
