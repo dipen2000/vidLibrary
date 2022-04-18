@@ -14,6 +14,7 @@ const Navbar = () => {
         </Link>
         {isUserLoggedIn ? (
           <button
+            className="btn btn-primary-solid shoetube-btn-main"
             onClick={() =>
               logoutService({ setIsUserLoggedIn, userDataDispatch })
             }
@@ -21,7 +22,12 @@ const Navbar = () => {
             logout
           </button>
         ) : (
-          <button onClick={() => navigate("/login")}>login</button>
+          <button
+            className="btn btn-primary-solid shoetube-btn-main"
+            onClick={() => navigate("/login")}
+          >
+            login
+          </button>
         )}
         {/* <button>
           <Link to={`/${isUserLoggedIn ? "logout" : "login"}`}>

@@ -34,7 +34,11 @@ const VideosSection = () => {
     <main className="video-section-container flex-col">
       <div className="chips-container flex-row chips-position">
         <button
-          className={showCategories.length === 0 && "active"}
+          className={
+            showCategories.length === 0
+              ? "btn btn-primary-outline btn-rounded shoe-tube-chips active"
+              : "btn btn-primary-outline btn-rounded shoe-tube-chips"
+          }
           onClick={() => filterStateDispatch({ type: "ALL_CATEGORIES" })}
         >
           All
@@ -44,7 +48,11 @@ const VideosSection = () => {
           return (
             <button
               key={_id}
-              className={showCategories.includes(categoryName) && "active"}
+              className={
+                showCategories.includes(categoryName)
+                  ? "btn btn-primary-outline btn-rounded shoe-tube-chips active"
+                  : "btn btn-primary-outline btn-rounded  shoe-tube-chips"
+              }
               onClick={() => {
                 filterStateDispatch({
                   type: "ADD_CATEGORY",

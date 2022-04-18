@@ -3,6 +3,7 @@ import { useUserContext } from "../../contexts/UserContext";
 import { useVideoState } from "../../contexts/videoStateContext";
 import { addToHistory } from "../../services/History/addToHistory";
 import { inHistory } from "../../utils/videoUtil";
+import "./buttons.css";
 const PlayButton = ({ video }) => {
   const { _id, id } = video;
   const navigate = useNavigate();
@@ -18,7 +19,14 @@ const PlayButton = ({ video }) => {
     navigate(`/${id}`);
   };
 
-  return <button onClick={() => openVideoAndHandleHistory()}>Play</button>;
+  return (
+    <button
+      className="btn btn-primary-solid shoetube-btn-main shoetube-play-btn"
+      onClick={() => openVideoAndHandleHistory()}
+    >
+      <i className="fa-solid fa-play"></i>
+    </button>
+  );
 };
 
 export { PlayButton };

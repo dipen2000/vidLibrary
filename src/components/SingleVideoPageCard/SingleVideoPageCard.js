@@ -7,7 +7,7 @@ const SingleVideoPageCard = ({ video }) => {
   const { title, creator, url, views, description } = video;
 
   return (
-    <div className="flex-col">
+    <div className="flex-col singe-video-page-container">
       <iframe
         className="single_page-video"
         src={url}
@@ -15,9 +15,9 @@ const SingleVideoPageCard = ({ video }) => {
         alt={`${title} ${creator}`}
       ></iframe>
       <div className="flex-col">
-        <h2>{title}</h2>
-        <h3>by {creator}</h3>
-        <p>{description}</p>
+        <h2 className="heading-2">{title}</h2>
+        <h3 className="heading-3">by {creator}</h3>
+        <p className="single-video-page-desc">{description}</p>
         <div className="flex-row">
           <LikeButton video={video} />
           <SaveButton video={video} />

@@ -1,0 +1,22 @@
+.shoetube-play-btn{
+    border-radius: 50px;
+}
+
+.shoetube-btn-main{
+    background-color : var(--shoe-tube-black);
+    border-radius: 0;
+  }
+  
+  .shoetube-btn-main:hover{
+    background-color : rgba(0, 0, 0, 0.878);
+  }
+
+  .btn-color-invert{
+    background-color : var(--white-background);
+    color : var(--shoe-tube-black);
+  }
+
+  .btn-color-invert:hover{
+    background-color : var(--white-background);
+  }
+  

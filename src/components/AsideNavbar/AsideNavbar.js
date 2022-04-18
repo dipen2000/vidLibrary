@@ -7,26 +7,36 @@ const AsideNavbar = () => {
   } = useVideoState();
   return (
     <aside className="aside-container">
-      <div className="flex-col side-nav-section">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+      <div className="flex-col side-nav-section justify-space-between-flex align-center-flex">
+        <ul className="flex-col align-center-flex">
+          <li className="aside-list">
+            <Link to="/">
+              <h3>Home</h3>
+            </Link>
           </li>
-          <li>
-            <Link to="/playlist">Playlists ({playLists.length})</Link>
+          <li className="aside-list">
+            <Link to="/playlist">
+              <h3>Playlists ({playLists.length})</h3>
+            </Link>
           </li>
-          <li>
-            <Link to="/liked">Liked ({likedList.length})</Link>
+          <li className="aside-list">
+            <Link to="/liked">
+              <h3>Liked ({likedList.length})</h3>
+            </Link>
           </li>
-          <li>
-            <Link to="/watch-later">Watch later ({watchLater.length})</Link>
+          <li className="aside-list">
+            <Link to="/watch-later">
+              <h3>Watch later ({watchLater.length})</h3>
+            </Link>
           </li>
-          <li>
-            <Link to="/history">History ({history.length})</Link>
+          <li className="aside-list">
+            <Link to="/history">
+              <h3>History ({history.length})</h3>
+            </Link>
           </li>
         </ul>
         <a href="https://twitter.com/DipenChavda2" target="_blank">
-          Connect with me!
+          <h3>Connect with me!</h3>
         </a>
       </div>
     </aside>

@@ -21,10 +21,17 @@ const WatchLater = () => {
         <div className="grid-container">
           <AsideNavbar />
           <section className="flex-col">
-            <div>Watch later videos ({watchLater.length})</div>
+            <h2 className="page-title-text">
+              Watch later videos ({watchLater.length})
+            </h2>
             {watchLater.length === 0 ? (
               <EmptyListPage text={"No watch later videos here"}>
-                <button onClick={() => navigate("/")}>Explore</button>
+                <button
+                  className="btn btn-primary-solid shoetube-btn-main"
+                  onClick={() => navigate("/")}
+                >
+                  Explore
+                </button>
               </EmptyListPage>
             ) : (
               <div className="video-listing-container">

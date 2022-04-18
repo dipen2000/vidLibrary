@@ -11,7 +11,6 @@ const Login = () => {
     hide: { pwd: true },
   });
   const navigate = useNavigate();
-  // console.log(useUserContext());
   const { setIsUserLoggedIn, userDataDispatch } = useUserContext();
 
   const loginInputHandler = (e) => {
@@ -27,11 +26,10 @@ const Login = () => {
     password: "adarshBalika123",
   };
 
-  //   console.log(loginInput.input);
   return (
     <>
       <Navbar />
-      <section>
+      <section className="login-container flex-col align-center-flex justify-center-flex">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -44,8 +42,9 @@ const Login = () => {
             });
           }}
         >
-          <h2>Login</h2>
+          <h2 className="heading-2">Login</h2>
           <input
+            className="shoetube-input-box"
             type="email"
             name="email"
             placeholder="Enter your e-mail here"
@@ -54,6 +53,7 @@ const Login = () => {
           />
           <br />
           <input
+            className="shoetube-input-box"
             type={loginInput.hide.pwd ? "password" : "text"}
             name="password"
             placeholder="Enter your password"
@@ -61,7 +61,7 @@ const Login = () => {
             onChange={loginInputHandler}
           />
           <span
-            className="curs-point"
+            className="curs-point heading-4 show-hide-toggle"
             onClick={() =>
               setLoginInput({
                 ...loginInput,
@@ -72,10 +72,14 @@ const Login = () => {
             {loginInput.hide.pwd ? "show" : "hide"}
           </span>
           <br />
-          <button className="curs-point">login</button>
-          <br />
+          <button className="curs-point btn btn-primary-solid shoetube-btn-main">
+            login
+          </button>
+          <p className="heading-4 flex-row align-center-flex justify-center-flex">
+            or
+          </p>
           <button
-            className="curs-point"
+            className="curs-point btn btn-primary-solid shoetube-btn-main"
             onClick={() => setLoginInput({ ...loginInput, input: guestLogin })}
           >
             Guest login

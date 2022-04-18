@@ -1,17 +1,14 @@
 .playlist-card-container{
-    border : 3px solid green;
     width : 30rem;
 }
 
 .playlist-thumbnail-container{
-    border: 2px solid red;
     width: 100%;
     height: 15rem;
     position : relative;
 }
 
 .playlist-overlay-container{
-    border : 3px solid blue;
     position : absolute;
     width : 15rem;
     height : 100%;
@@ -23,5 +20,14 @@
 }
 
 .playlist-desc{
-    border : 3px solid blue;
+    padding : 1rem;
+}
+
+.playlist-desc p{
+    font-family: var(--component-heading-font);
+}
+
+.empty-playlist-container{
+    width : 100%;
+    height : 100%;
 }

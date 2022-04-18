@@ -28,11 +28,18 @@ const PlaylistsPage = () => {
           <AsideNavbar />
           <section className="flex-col">
             <div className="flex-row justify-space-between-flex">
-              <div>Playlists ({playLists.length})</div>
+              <h2 className="page-title-text">
+                Playlists ({playLists.length})
+              </h2>
             </div>
             {playLists.length === 0 ? (
               <EmptyListPage text={"no playlists here"}>
-                <button onClick={() => navigate("/")}>Explore</button>
+                <button
+                  className="btn btn-primary-solid shoetube-btn-main"
+                  onClick={() => navigate("/")}
+                >
+                  Explore
+                </button>
               </EmptyListPage>
             ) : (
               <div className="video-listing-container">

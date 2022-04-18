@@ -1,10 +1,19 @@
-.aside-container {
-  border: 3px solid purple;
-}
+
 
 .side-nav-section {
-  border: 3px solid red;
-  /* height: 100vh; */
-  height: 90vh;
+  border-right: 3px solid var(--shoe-tube-black);
+  padding : 2rem;
+  width : 26rem;
+  height: 80vh;
+  font-family: var(--component-heading-font);
   position: fixed;
+}
+
+.aside-list{
+  padding : 0.5rem 0;
+  margin-bottom: 0.8rem;
+}
+
+.aside-list:hover{
+  border-bottom: 2px solid black;
 }

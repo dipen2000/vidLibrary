@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 .navbar {
-  border: 3px solid black;
+  border: 5px solid black;
   padding: 1rem;
   font-family: 'Oswald', sans-serif;
   background-color: var(--white-background);
@@ -10,3 +10,4 @@
   position: sticky;
   top: 0;
 }
+

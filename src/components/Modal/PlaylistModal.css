@@ -11,8 +11,18 @@
 }
 
 .modal-container{
-  border : 6px solid black;
+  border : 6px solid var(--shoe-tube-black);
   width : 40rem;
   margin : 0 auto;
-  background-color : white;
+  background-color : var(--white-background);
+  padding : 1rem;
+}
+
+.dismiss-modal{
+  font-size : 2rem;
+  margin-left : auto;
+}
+
+.playlist-heading{
+  margin-bottom: 1rem;
 }

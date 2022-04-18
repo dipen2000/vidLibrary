@@ -20,10 +20,17 @@ const Liked = () => {
         <div className="grid-container">
           <AsideNavbar />
           <section className="flex-col">
-            <div>Liked videos ({likedList.length})</div>
+            <h2 className="page-title-text">
+              Liked videos ({likedList.length})
+            </h2>
             {likedList.length === 0 ? (
               <EmptyListPage text={"No liked videos here"}>
-                <button onClick={() => navigate("/")}>Explore</button>
+                <button
+                  className="btn btn-primary-solid shoetube-btn-main"
+                  onClick={() => navigate("/")}
+                >
+                  Explore
+                </button>
               </EmptyListPage>
             ) : (
               <div className="video-listing-container">

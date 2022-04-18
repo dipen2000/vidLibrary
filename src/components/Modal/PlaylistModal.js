@@ -53,15 +53,19 @@ const PlaylistModal = () => {
   return (
     <section className="flex-col modal-section-overlay">
       <div className="flex-col modal-container">
-        <button
-          onClick={() => {
-            setDisplayModal(false);
-            setVideo(undefined);
-          }}
-        >
-          x
-        </button>
-        <h3>Playlist</h3>
+        <div className="flex-row align-center-flex">
+          <div
+            className="curs-point dismiss-modal"
+            onClick={() => {
+              setDisplayModal(false);
+              setVideo(undefined);
+            }}
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+
+        <h3 className="heading-3 playlist-heading">Playlist</h3>
         <div className="flex-col">
           {video &&
             playLists.map((playlist) => {
@@ -86,8 +90,9 @@ const PlaylistModal = () => {
             })}
         </div>
         {showCreatePlaylistForm ? (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="flex-col">
             <input
+              className="shoetube-input-box"
               type="text"
               placeholder="title"
               value={playlist.title}
@@ -96,6 +101,7 @@ const PlaylistModal = () => {
               }
             />
             <input
+              className="shoetube-input-box"
               type="text"
               placeholder="desc"
               value={playlist.desc}
@@ -103,10 +109,18 @@ const PlaylistModal = () => {
                 setPlaylist({ ...playlist, desc: e.target.value })
               }
             />
-            <button type="submit">Create playlist</button>
+            <button
+              className="btn btn-primary-solid shoetube-btn-main"
+              type="submit"
+            >
+              Create playlist
+            </button>
           </form>
         ) : (
-          <button onClick={() => setShowCreatePlaylistForm(true)}>
+          <button
+            className="btn btn-primary-solid shoetube-btn-main"
+            onClick={() => setShowCreatePlaylistForm(true)}
+          >
             Add a new playlist
           </button>
         )}

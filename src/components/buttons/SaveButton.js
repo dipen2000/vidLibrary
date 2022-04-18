@@ -1,8 +1,11 @@
+import "./buttons.css";
 import { useNavigate } from "react-router-dom";
 import { usePlaylistModal } from "../../contexts/PlaylistModalContext";
 import { useUserContext } from "../../contexts/UserContext";
 import { useVideoState } from "../../contexts/videoStateContext";
 import { isVideoSaved } from "../../utils/videoUtil";
+import { AddToPlaylist } from "../../assets/AddToPlaylist";
+import { AddedToPlaylist } from "../../assets/AddedToPlaylist";
 
 const SaveButton = ({ video }) => {
   const { _id } = video;
@@ -25,10 +28,11 @@ const SaveButton = ({ video }) => {
 
   return (
     <button
+      className="btn btn-primary-solid shoetube-btn-main"
       title={saved ? "Saved" : "Save"}
       onClick={() => openPlaylistModal({ video })}
     >
-      {saved ? "Saved" : "Save"}
+      {saved ? <AddedToPlaylist /> : <AddToPlaylist />}
     </button>
   );
 };

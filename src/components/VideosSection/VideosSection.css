@@ -1,9 +1,7 @@
-.video-section-container {
-  border: 3px solid green;
-}
-
 .chips-container {
-  border: 3px solid blue;
+  border: 3px solid var(--shoe-tube-black);
+  padding : 0.5rem 0;
+  background-color : var(--white-background);
 }
 
 .chips-position {
@@ -11,10 +9,19 @@
   top: 7rem;
 }
 
-.grid-item {
-  border: 3px solid red;
-}
 
 .active {
-  background-color: yellow;
+  background-color: var(--shoe-tube-black);
+  color : white !important;
+}
+
+.shoe-tube-chips{
+  padding : 0.6rem 1.2rem;
+  border : 3px solid var(--shoe-tube-black);
+  color : var(--shoe-tube-black);
+}
+
+.shoe-tube-chips:hover{
+  background-color : var(--shoe-tube-black-hover);
+  color : var(--white-background);
 }

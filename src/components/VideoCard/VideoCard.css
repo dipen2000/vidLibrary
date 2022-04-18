@@ -1,16 +1,17 @@
 .video-card-container {
-  border: 3px solid red;
   width: 30rem;
 }
 
 .thumbnail-container {
-  border: 2px solid green;
   width: 100%;
   height: 15rem;
 }
 
-.video-details {
-  border: 3px solid purple;
+
+.video-desc-font{
+  font-family : var(--component-heading-font);
 }
 
-
+.video-card-desc-container{
+  padding : 0.5rem;
+}

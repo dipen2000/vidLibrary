@@ -28,7 +28,7 @@ const SinglePlaylistPage = () => {
           <div className="grid-container">
             <AsideNavbar />
             <section className="flex-col">
-              <p>Empty playlist</p>
+              <h2 className="page-title-text">Empty playlist</h2>
             </section>
           </div>
         </div>
@@ -42,9 +42,9 @@ const SinglePlaylistPage = () => {
         <div className="grid-container">
           <AsideNavbar />
           <section className="flex-col">
-            <p>
+            <h2 className="page-title-text">
               {title} ({videos.length})
-            </p>
+            </h2>
             <div className="video-listing-container">
               {videos.map((video) => {
                 return (

@@ -23,7 +23,7 @@ export const videos = [
     img_src:
       "https://i.ytimg.com/vi/fYBCkz06vmQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCeSASJQw0E4Dz8ee7hddS-dazQJw",
     url: "https://www.youtube.com/embed/fYBCkz06vmQ",
-    title: "Kobe Bryant EVERY Nike Shoe Commercial",
+    title: "Kobe Bryant EVERY Nike Shoe ad",
     creator: "Piotrekz Productions",
     views: "820K",
     duration: "12m50s",
@@ -62,7 +62,7 @@ export const videos = [
     img_src:
       "https://i.ytimg.com/vi/0jvt8Js0OU0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQv-G6KiBTpfNiO8LFTThExeLB9A",
     url: "https://www.youtube.com/embed/0jvt8Js0OU0",
-    title: "Cristiano Ronaldo Goes Sneaker Shopping",
+    title: "Ronaldo Goes Sneaker Shopping",
     creator: "Complex",
     views: "33.3M",
     duration: "9m34s",

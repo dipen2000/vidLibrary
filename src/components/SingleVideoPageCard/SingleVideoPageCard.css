@@ -2,3 +2,11 @@
     width: 80%;
     aspect-ratio: 16/9;
 }
+
+.singe-video-page-container{
+    padding : 1rem;
+}
+
+.single-video-page-desc{
+    font-family: var(--component-heading-font);
+}
