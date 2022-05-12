@@ -1,8 +1,14 @@
 import "./App.css";
-import logo from "./logo.png";
+import { Navbar } from "./components/Navbar/Navbar";
+import { NavRoutes } from "./Routes/NavRoutes";
 
 function App() {
-  return <div className="App">Hello</div>;
+  return (
+    <div className="App">
+      <Navbar />
+      <NavRoutes />
+    </div>
+  );
 }
 
 export default App;

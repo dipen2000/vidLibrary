@@ -1,0 +1,82 @@
+.flex-row{
+    display : flex;
+      flex-direction: row;
+  }
+  
+  .flex-col{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .justify-center-flex{
+    justify-content : center;
+  }
+  
+  .justify-space-between-flex{
+    justify-content : space-between;
+  }
+  
+  .justify-space-evenly-flex{
+    justify-content : space-evenly;
+  }
+  
+  .align-center-flex{ 
+    align-items : center;
+  }
+  
+  .curs-point{
+    cursor : pointer;
+  }
+  
+  .img-resp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .mb-1{
+    margin-bottom: 1rem;;
+  }
+  
+  .mt-1{
+    margin-top: 1rem;
+  }
+  
+  .gap-1{
+    gap : 1rem;
+  }
+  
+  .gap-2{
+    gap : 2rem;
+  }
+  
+  .loading-gif{
+    border : 3px solid red;
+    width : 20rem;
+    height : 20rem;
+  }
+  
+  .bord-3-red{
+    border : 3px solid red;
+  }
+  
+  .bord-3-green{
+    border : 3px solid green;
+  }
+  
+  .bord-3-yellow{
+    border : 3px solid yellow;
+  }
+  
+  .bord-3-purple{
+    border : 3px solid purple;
+  }
+  
+  .bord-3-blue{
+    border : 3px solid blue;
+  }
+  
+ .App{
+     font-family: var(--component-heading-font);
+ }
