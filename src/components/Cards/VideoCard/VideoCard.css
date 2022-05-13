@@ -1,0 +1,15 @@
+.video-card-container{
+    width : 30rem;
+}
+
+.video-thumbnail-container{
+    height : 15rem;
+}
+
+.video-details-container{
+    padding : 0.5rem;
+}
+
+.video-btn-CTA-container{
+    padding : 0.5rem;
+}

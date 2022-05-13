@@ -1,0 +1,8 @@
+.chip{
+    padding : 0.7rem 1.5rem;
+    border : 3px solid black;
+}
+
+.chip:hover{
+    background-color : rgba(0, 0, 0, 0.221);
+}
