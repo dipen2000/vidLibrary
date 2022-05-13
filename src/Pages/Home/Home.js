@@ -7,13 +7,16 @@ import { useCategory } from "../../context/categoryContext";
 import { useVideos } from "../../context/videoContext";
 import { getFinalData } from "../../utils/videos/getFinalData";
 import { useState } from "react";
+import { useLiked } from "../../context/likeContext";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
   const { categoryState, selectedCategory, setSelectedCategory } =
     useCategory();
   const { videoState } = useVideos();
+  const { likedState } = useLiked();
   const finalData = getFinalData(videoState, selectedCategory, searchInput);
+  console.log(likedState);
   return (
     <ShoetubeContainer>
       <div className="flex-col bord-3-green">
@@ -54,11 +57,15 @@ const Home = () => {
         </div>
         <div className="flex-col video-listing-section bord-3-red">
           <h2>Videos ({finalData.length})</h2>
-          <div className="video-listing-grid-container bord-3-green">
-            {finalData.map((video) => {
-              return <VideoCard key={video._id} video={video} />;
-            })}
-          </div>
+          {finalData.length === 0 ? (
+            <p>The item of your preference is not available.</p>
+          ) : (
+            <div className="video-listing-grid-container bord-3-green">
+              {finalData.map((video) => {
+                return <VideoCard key={video._id} video={video} />;
+              })}
+            </div>
+          )}
         </div>
       </div>
     </ShoetubeContainer>

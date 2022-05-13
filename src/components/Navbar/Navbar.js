@@ -2,10 +2,12 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { ButtonPrimary } from "../Buttons";
 import { useAuth } from "../../context/authContext";
+import { useLiked } from "../../context/likeContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
+  const { likedState } = useLiked();
   return (
     <header className="navbar-sticky">
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -24,7 +26,7 @@ const Navbar = () => {
           </div>
           <div>
             <Link to="/liked" className="curs-point">
-              Liked
+              Liked ({likedState.length})
             </Link>
           </div>
           <div>
