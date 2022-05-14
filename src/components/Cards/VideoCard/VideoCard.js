@@ -1,5 +1,10 @@
 import "./VideoCard.css";
-import { PlayButton, LikeButton, WatchLaterButton } from "../../Buttons";
+import {
+  PlayButton,
+  LikeButton,
+  WatchLaterButton,
+  SaveButton,
+} from "../../Buttons";
 
 const VideoCard = ({ video }) => {
   const { title, creator, views, img_src, _id } = video;
@@ -16,10 +21,10 @@ const VideoCard = ({ video }) => {
         </div>
       </div>
       <div className="video-btn-CTA-container bord-3-blue flex-row align-center-flex justify-space-between-flex">
-        <PlayButton videoId={_id} />
+        <PlayButton video={video} />
         <div className="flex-row align-center-flex">
           <LikeButton video={video} />
-          <button>Save</button>
+          <SaveButton />
           <WatchLaterButton video={video} />
         </div>
       </div>

@@ -1,10 +1,18 @@
 import { useNavigate } from "react-router-dom";
-const PlayButton = ({ videoId }) => {
+import { useHistory } from "../../../context/historyContext";
+const PlayButton = ({ video }) => {
+  const { historyState, addToHistory } = useHistory();
   const navigate = useNavigate();
+  const videoInHistoryList = historyState.find(
+    (item) => item._id === video._id
+  );
   return (
     <button
       className="curs-point"
-      onClick={() => navigate(`/videos/${videoId}`)}
+      onClick={() => {
+        addToHistory(video, videoInHistoryList);
+        navigate(`/videos/${video._id}`);
+      }}
     >
       Play
     </button>
