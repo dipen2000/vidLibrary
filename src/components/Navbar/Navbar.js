@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { ButtonPrimary } from "../Buttons";
 import { useAuth } from "../../context/authContext";
 import { useLiked } from "../../context/likeContext";
+import { useWatchLater } from "../../context/watchLaterContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
   const { likedState } = useLiked();
+  const { watchLaterState } = useWatchLater();
   return (
     <header className="navbar-sticky">
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -31,7 +33,7 @@ const Navbar = () => {
           </div>
           <div>
             <Link to="/watch-later" className="curs-point">
-              Watch later
+              Watch later ({watchLaterState.length})
             </Link>
           </div>
           <div>
