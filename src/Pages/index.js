@@ -8,3 +8,4 @@ export { Login } from "./Login/Login";
 export { Logout } from "./Logout/Logout";
 export { Signup } from "./Signup/Signup";
 export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
+export { SinglePlaylistPage } from "./SinglePlaylistPage/SinglePlaylistPage";

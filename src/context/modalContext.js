@@ -6,8 +6,16 @@ const useModal = () => useContext(modalContext);
 
 const ModalProvider = ({ children }) => {
   const [isModalShown, setIsModalShown] = useState(false);
+  const [videoForPlaylist, setVideoForPlaylist] = useState({});
   return (
-    <modalContext.Provider value={{ isModalShown, setIsModalShown }}>
+    <modalContext.Provider
+      value={{
+        isModalShown,
+        setIsModalShown,
+        videoForPlaylist,
+        setVideoForPlaylist,
+      }}
+    >
       {children}
     </modalContext.Provider>
   );

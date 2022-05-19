@@ -14,9 +14,9 @@ const Home = () => {
   const { categoryState, selectedCategory, setSelectedCategory } =
     useCategory();
   const { videoState } = useVideos();
-  const { playlistState } = usePlaylist();
+
   const finalData = getFinalData(videoState, selectedCategory, searchInput);
-  console.log(playlistState);
+
   return (
     <ShoetubeContainer>
       <div className="flex-col bord-3-green">

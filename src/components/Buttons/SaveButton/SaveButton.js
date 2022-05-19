@@ -1,12 +1,18 @@
 import "./SaveButton.css";
 import { useModal } from "../../../context/modalContext";
-import { Modal } from "../../Modal/Modal";
-const SaveButton = () => {
-  const { isModalShown, setIsModalShown } = useModal();
+const SaveButton = ({ video }) => {
+  const { setIsModalShown, setVideoForPlaylist } = useModal();
+  // const isInPlaylist = ?
+  //  // console.log(video);
   return (
     <>
-      {isModalShown && <Modal />}
-      <button className="curs-point" onClick={() => setIsModalShown(true)}>
+      <button
+        className="curs-point"
+        onClick={() => {
+          setVideoForPlaylist(video);
+          setIsModalShown(true);
+        }}
+      >
         Save
       </button>
     </>

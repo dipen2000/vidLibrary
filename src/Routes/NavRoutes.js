@@ -10,6 +10,7 @@ import {
   Logout,
   Signup,
   SingleVideoPage,
+  SinglePlaylistPage,
 } from "../Pages";
 import Mockman from "mockman-js";
 import { RequiresAuth } from "../components/RequiresAuth/RequiresAuth";
@@ -48,6 +49,14 @@ const NavRoutes = () => {
         element={
           <RequiresAuth>
             <History />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/playlist/:playlistId"
+        element={
+          <RequiresAuth>
+            <SinglePlaylistPage />
           </RequiresAuth>
         }
       />

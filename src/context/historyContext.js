@@ -80,7 +80,7 @@ const HistoryProvider = ({ children }) => {
         const { data, status } = await clearHistoryService(token);
 
         if (status === 200) {
-          console.log("clear history");
+          // console.log("clear history");
           historyDispatch({
             type: ACTIONS.SET_HISTORY_LIST,
             payload: { data: data.history },

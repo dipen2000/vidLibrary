@@ -5,6 +5,7 @@ import { useAuth } from "../../context/authContext";
 import { useLiked } from "../../context/likeContext";
 import { useWatchLater } from "../../context/watchLaterContext";
 import { useHistory } from "../../context/historyContext";
+import { usePlaylist } from "../../context/playlistContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Navbar = () => {
   const { likedState } = useLiked();
   const { watchLaterState } = useWatchLater();
   const { historyState } = useHistory();
+  const { playlistState } = usePlaylist();
   return (
     <header className="navbar-sticky">
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -25,7 +27,7 @@ const Navbar = () => {
           </label>
           <div>
             <Link to="/playlists" className="curs-point">
-              Playlists
+              Playlists ({playlistState.length})
             </Link>
           </div>
           <div>
