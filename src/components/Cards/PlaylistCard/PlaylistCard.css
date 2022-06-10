@@ -1,0 +1,39 @@
+.playlist-card-container{
+    width : 30rem;
+}
+
+.playlist-thumbnail-container{
+    height : 15rem;
+    position : relative;
+}
+
+.playlist-thumbnail-section{
+    height : 100%;
+    position : relative;
+}
+
+.playlist-thumbnail-section h3{
+    top : 40%;
+    position: absolute;
+    left : 1rem;
+}
+
+.playlist-side-overlay-section{
+    position: absolute;
+    right : 0;
+    top : 0;
+    bottom : 0;
+    width : 50%;
+    height : 100%;
+    background: rgba(0, 0, 0, 0.069);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.playlist-detail-section{
+    padding : 0.5rem;
+}
+
+.playlist-video-count{
+    color : white;
+}

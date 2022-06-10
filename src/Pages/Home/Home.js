@@ -14,13 +14,13 @@ const Home = () => {
   const { categoryState, selectedCategory, setSelectedCategory } =
     useCategory();
   const { videoState } = useVideos();
-  const { playlistState } = usePlaylist();
+
   const finalData = getFinalData(videoState, selectedCategory, searchInput);
-  console.log(playlistState);
+
   return (
     <ShoetubeContainer>
-      <div className="flex-col bord-3-green">
-        <div className="chip-section bord-3-purple flex-row align-center-flex gap-1">
+      <div className="flex-col">
+        <div className="chip-section flex-row align-center-flex gap-1">
           <Chip
             style={{
               backgroundColor: selectedCategory === "All" ? "black" : "",
@@ -49,18 +49,18 @@ const Home = () => {
             );
           })}
         </div>
-        <div className="searchbar-section bord-3-yellow">
+        <div className="searchbar-section bord-3-black">
           <SearchBar
             onChange={(e) => setSearchInput(e.target.value)}
             value={searchInput}
           />
         </div>
-        <div className="flex-col video-listing-section bord-3-red">
+        <div className="flex-col video-listing-section">
           <h2>Videos ({finalData.length})</h2>
           {finalData.length === 0 ? (
             <p>The item of your preference is not available.</p>
           ) : (
-            <div className="video-listing-grid-container bord-3-green">
+            <div className="video-listing-grid-container">
               {finalData.map((video) => {
                 return <VideoCard key={video._id} video={video} />;
               })}

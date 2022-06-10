@@ -1,16 +1,15 @@
-import "./VideoCard.css";
+import "./SinglePlaylistCard.css";
 import {
   PlayButton,
   LikeButton,
   WatchLaterButton,
-  SaveButton,
+  RemoveButton,
 } from "../../Buttons";
-
-const VideoCard = ({ video }) => {
+const SinglePlaylistCard = ({ video }) => {
   const { title, creator, views, img_src, _id } = video;
   return (
-    <div className="video-card-container flex-col card-box-shadow">
-      <div className="video-thumbnail-container">
+    <div className="bord-3-purple video-card-container flex-col">
+      <div className="video-thumbnail-container bord-3-blue">
         <img className="img-resp" src={img_src} alt={`${title} ${creator}`} />
       </div>
       <div className="flex-col video-details-container">
@@ -20,11 +19,11 @@ const VideoCard = ({ video }) => {
           <span>{views} views</span>
         </div>
       </div>
-      <div className="video-btn-CTA-container flex-row align-center-flex justify-space-between-flex">
+      <div className="video-btn-CTA-container bord-3-blue flex-row align-center-flex justify-space-between-flex">
         <PlayButton video={video} />
-        <div className="flex-row align-center-flex gap-1">
+        <div className="flex-row align-center-flex">
           <LikeButton video={video} />
-          <SaveButton video={video} />
+          <RemoveButton video={video} />
           <WatchLaterButton video={video} />
         </div>
       </div>
@@ -32,4 +31,4 @@ const VideoCard = ({ video }) => {
   );
 };
 
-export { VideoCard };
+export { SinglePlaylistCard };

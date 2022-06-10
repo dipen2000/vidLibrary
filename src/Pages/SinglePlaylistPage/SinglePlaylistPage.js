@@ -1,25 +1,31 @@
-import "./Playlists.css";
 import { ShoetubeContainer } from "../../components/Wrapper/ShoetubeContainer";
+import { useParams } from "react-router-dom";
 import { usePlaylist } from "../../context/playlistContext";
-import { PlaylistCard } from "../../components/Cards/PlaylistCard/PlaylistCard";
+import { SinglePlaylistCard } from "../../components/Cards/SinglePlaylistCard/SinglePlaylistCard";
 import { ButtonPrimary } from "../../components/Buttons";
 import { useNavigate } from "react-router-dom";
-const Playlists = () => {
+import "./SinglePlaylistPage.css";
+
+const SinglePlaylistPage = () => {
+  const { playlistId } = useParams();
   const { playlistState } = usePlaylist();
   const navigate = useNavigate();
+  const playlist = playlistState.find((video) => video._id === playlistId);
   return (
     <ShoetubeContainer>
       <div className="flex-col bord-3-green">
-        <h2>Playlists ({playlistState.length})</h2>
-        {playlistState.length === 0 ? (
+        <h2>
+          {playlist.title} ({playlist.videos.length})
+        </h2>
+        {playlist.videos.length === 0 ? (
           <div>
-            <p>No playlists here</p>
+            <p>No videos in this playlist</p>
             <ButtonPrimary onClick={() => navigate("/")}>Explore</ButtonPrimary>
           </div>
         ) : (
           <div className="video-listing-grid-container bord-3-green">
-            {playlistState.map((playlist) => {
-              return <PlaylistCard key={playlist._id} playlist={playlist} />;
+            {playlist.videos.map((video) => {
+              return <SinglePlaylistCard key={video._id} video={video} />;
             })}
           </div>
         )}
@@ -28,4 +34,4 @@ const Playlists = () => {
   );
 };
 
-export { Playlists };
+export { SinglePlaylistPage };
