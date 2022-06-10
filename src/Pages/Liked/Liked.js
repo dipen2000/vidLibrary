@@ -9,12 +9,17 @@ const Liked = () => {
   const navigate = useNavigate();
   return (
     <ShoetubeContainer>
-      <div className="flex-col bord-3-green">
+      <div className="flex-col  gap-1 mt-1">
         <h2>Liked videos ({likedState.length})</h2>
         {likedState.length === 0 ? (
-          <div className="bord-3-blue flex-col align-center-flex justify-center-flex">
-            <p>No liked videos</p>
-            <ButtonPrimary onClick={() => navigate("/")}>Explore</ButtonPrimary>
+          <div className="flex-col align-center-flex justify-center-flex gap-1">
+            <h2>No liked videos</h2>
+            <button
+              className="curs-point btn-primary"
+              onClick={() => navigate("/")}
+            >
+              Explore
+            </button>
           </div>
         ) : (
           <div className="video-listing-grid-container bord-3-green">

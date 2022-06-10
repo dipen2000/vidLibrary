@@ -17,11 +17,17 @@ const Modal = () => {
 
   return (
     <div className="modal-overlay-container flex-row align-center-flex justify-center-flex">
-      <div className="modal flex-col bord-3-blue gap-1">
+      <div className="modal flex-col bord-3-black gap-1">
         <div className="flex-row align-center-flex justify-flex-end">
-          <button className="curs-point" onClick={() => setIsModalShown(false)}>
+          {/* <button className="curs-point" onClick={() => setIsModalShown(false)}>
             x
-          </button>
+          </button> */}
+          <div
+            className="modal-close-icon-container"
+            onClick={() => setIsModalShown(false)}
+          >
+            <i className="fa-solid fa-xmark"></i>
+          </div>
         </div>
         <h3>Playlist</h3>
         {isPlaylistFormShown ? (
@@ -52,13 +58,16 @@ const Modal = () => {
                 value={playlistFormInput.description}
                 required={true}
               />
-              <ButtonPrimary>Create playlist</ButtonPrimary>
+              <button className="add-new-playlist-btn">Create playlist</button>
             </div>
           </form>
         ) : (
-          <ButtonPrimary onClick={() => setIsPlaylistFormShown(true)}>
+          <button
+            className="add-new-playlist-btn"
+            onClick={() => setIsPlaylistFormShown(true)}
+          >
             Add a new playlist
-          </ButtonPrimary>
+          </button>
         )}
       </div>
     </div>

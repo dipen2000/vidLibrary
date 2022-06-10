@@ -139,3 +139,12 @@
   align-items : center;
 }
 
+.item-remove-btn{
+  background-color: var(--btn-primary-color);
+  color : var(--btn-primary-font-color);
+  font-family: var(--component-heading-font);
+}
+
+.gap-z-5{
+  gap : 0.5rem;
+}
