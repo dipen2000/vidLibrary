@@ -7,3 +7,4 @@ export { Page404 } from "./Page404/Page404";
 export { Login } from "./Login/Login";
 export { Logout } from "./Logout/Logout";
 export { Signup } from "./Signup/Signup";
+export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";

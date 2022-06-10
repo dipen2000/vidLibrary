@@ -9,10 +9,11 @@ import {
   Login,
   Logout,
   Signup,
+  SingleVideoPage,
 } from "../Pages";
 import Mockman from "mockman-js";
 import { RequiresAuth } from "../components/RequiresAuth/RequiresAuth";
-// import { requiresAuth } from './../backend/utils/authUtils';
+
 const NavRoutes = () => {
   return (
     <Routes>
@@ -51,6 +52,7 @@ const NavRoutes = () => {
         }
       />
       <Route path="*" element={<Page404 />} />
+      <Route path="/videos/:videoId" element={<SingleVideoPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/logout" element={<Logout />} />
