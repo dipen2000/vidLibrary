@@ -1,10 +1,11 @@
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { ButtonPrimary } from "../Buttons";
+import { useAuth } from "../../context/authContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const { isAuth } = useAuth();
   return (
     <header className="navbar-sticky">
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -36,7 +37,11 @@ const Navbar = () => {
               History
             </Link>
           </div>
-          <ButtonPrimary>Login</ButtonPrimary>
+          <ButtonPrimary
+            onClick={() => navigate(`${isAuth ? "/logout" : "/login"}`)}
+          >
+            {isAuth ? "Logout" : "Login"}
+          </ButtonPrimary>
         </div>
       </nav>
     </header>
