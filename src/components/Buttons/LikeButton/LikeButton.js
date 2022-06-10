@@ -4,12 +4,14 @@ const LikeButton = ({ video }) => {
   const { likedState, toggleLike } = useLiked();
   const videoInLikedList = likedState.find((item) => item._id === video._id);
   return (
-    <button
-      className="curs-point"
+    <span
+      className="curs-point vid-lib-CTA-icon-container"
       onClick={() => toggleLike(video, videoInLikedList)}
     >
-      {videoInLikedList ? "Liked" : "Like"}
-    </button>
+      <i
+        className={`${videoInLikedList ? "fa-solid" : "fa-regular"}  fa-heart`}
+      ></i>
+    </span>
   );
 };
 

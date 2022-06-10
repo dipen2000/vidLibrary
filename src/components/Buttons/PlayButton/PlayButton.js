@@ -7,15 +7,15 @@ const PlayButton = ({ video }) => {
     (item) => item._id === video._id
   );
   return (
-    <button
-      className="curs-point"
+    <span
+      className="curs-point vid-lib-CTA-icon-container"
       onClick={() => {
         addToHistory(video, videoInHistoryList);
         navigate(`/videos/${video._id}`);
       }}
     >
-      Play
-    </button>
+      <i className="fa-solid fa-play"></i>
+    </span>
   );
 };
 

@@ -21,35 +21,32 @@ const Navbar = () => {
           <h2>SHOETUBE</h2>
         </Link>
         <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
-          <label htmlFor="dark-mode">
-            <input className="curs-point" type="checkbox" name="dark-mode" />
-            switch to dark mode
-          </label>
           <div>
             <Link to="/playlists" className="curs-point">
-              Playlists ({playlistState.length})
+              Playlists {playlistState.length}
             </Link>
           </div>
           <div>
             <Link to="/liked" className="curs-point">
-              Liked ({likedState.length})
+              Liked {likedState.length}
             </Link>
           </div>
           <div>
             <Link to="/watch-later" className="curs-point">
-              Watch later ({watchLaterState.length})
+              Watch later {watchLaterState.length}
             </Link>
           </div>
           <div>
             <Link to="/history" className="curs-point">
-              History ({historyState.length})
+              History {historyState.length}
             </Link>
           </div>
-          <ButtonPrimary
+          <button
+            className="curs-point btn-primary"
             onClick={() => navigate(`${isAuth ? "/logout" : "/login"}`)}
           >
             {isAuth ? "Logout" : "Login"}
-          </ButtonPrimary>
+          </button>
         </div>
       </nav>
     </header>

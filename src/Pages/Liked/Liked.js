@@ -12,7 +12,7 @@ const Liked = () => {
       <div className="flex-col bord-3-green">
         <h2>Liked videos ({likedState.length})</h2>
         {likedState.length === 0 ? (
-          <div>
+          <div className="bord-3-blue flex-col align-center-flex justify-center-flex">
             <p>No liked videos</p>
             <ButtonPrimary onClick={() => navigate("/")}>Explore</ButtonPrimary>
           </div>

@@ -7,10 +7,14 @@ const WatchLaterButton = ({ video }) => {
   );
   return (
     <button
-      className="curs-point"
+      className="curs-point vid-lib-CTA-icon-container"
       onClick={() => toggleWatchLater(video, videoInWatchLaterList)}
     >
-      {videoInWatchLaterList ? "Remove from watch later" : "Watch later"}
+      <i
+        className={`${
+          videoInWatchLaterList ? "fa-solid" : "fa-regular"
+        } fa-regular fa-clock`}
+      ></i>
     </button>
   );
 };

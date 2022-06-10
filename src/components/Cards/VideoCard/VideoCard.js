@@ -9,8 +9,8 @@ import {
 const VideoCard = ({ video }) => {
   const { title, creator, views, img_src, _id } = video;
   return (
-    <div className="bord-3-purple video-card-container flex-col">
-      <div className="video-thumbnail-container bord-3-blue">
+    <div className="video-card-container flex-col card-box-shadow">
+      <div className="video-thumbnail-container">
         <img className="img-resp" src={img_src} alt={`${title} ${creator}`} />
       </div>
       <div className="flex-col video-details-container">
@@ -20,9 +20,9 @@ const VideoCard = ({ video }) => {
           <span>{views} views</span>
         </div>
       </div>
-      <div className="video-btn-CTA-container bord-3-blue flex-row align-center-flex justify-space-between-flex">
+      <div className="video-btn-CTA-container flex-row align-center-flex justify-space-between-flex">
         <PlayButton video={video} />
-        <div className="flex-row align-center-flex">
+        <div className="flex-row align-center-flex gap-1">
           <LikeButton video={video} />
           <SaveButton video={video} />
           <WatchLaterButton video={video} />
