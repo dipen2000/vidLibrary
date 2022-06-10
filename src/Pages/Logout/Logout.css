@@ -2,6 +2,11 @@
     border : 3px solid blueviolet;
 }
 
-/* .logout-container{
-    
-} */
+.logout-container{
+    gap : 1rem;
+    margin-top : 10rem;
+}
+
+.logout-container i{
+    font-size: 7rem;
+}

@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <ShoetubeContainer>
-      <div className="flex-col">
+      <div className="flex-col mt-1">
         <div className="chip-section flex-row align-center-flex gap-1">
           <Chip
             style={{

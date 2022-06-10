@@ -16,3 +16,27 @@
 .modal{
     background-color : white;
 }
+
+.modal-close-icon-container{
+    border : 3px solid black;
+    height : 25px;
+    width : 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content : center;
+    align-items : center;
+    border-radius: 50%;
+    background-color : var(--btn-primary-color);
+    color : var(--btn-primary-font-color);
+    cursor: pointer;
+}
+
+.add-new-playlist-btn{
+    padding : 0.5rem;
+    cursor: pointer;
+    outline : none;
+    border : 3px solid var(--btn-primary-color);
+    background-color : var(--btn-primary-color);
+    color : var(--btn-primary-font-color);
+    font-family: var(--component-heading-font);
+}

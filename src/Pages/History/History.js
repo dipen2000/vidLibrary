@@ -9,17 +9,25 @@ const History = () => {
   const navigate = useNavigate();
   return (
     <ShoetubeContainer>
-      <div className="flex-col bord-3-green">
+      <div className="flex-col gap-1 mt-1">
         <div className="flex-row justify-space-between-flex align-center-flex">
           <h2>Videos in history ({historyState.length})</h2>
-          <ButtonPrimary onClick={() => clearHistory()}>
+          <button
+            className="curs-point btn-primary clear-history-btn"
+            onClick={() => clearHistory()}
+          >
             Clear History
-          </ButtonPrimary>
+          </button>
         </div>
         {historyState.length === 0 ? (
-          <div>
-            <p>No videos history</p>
-            <ButtonPrimary onClick={() => navigate("/")}>Explore</ButtonPrimary>
+          <div className="flex-col align-center-flex justify-center-flex gap-1">
+            <h2>No videos history</h2>
+            <button
+              className="curs-point btn-primary"
+              onClick={() => navigate("/")}
+            >
+              Explore
+            </button>
           </div>
         ) : (
           <div className="video-listing-grid-container bord-3-green">
@@ -27,9 +35,12 @@ const History = () => {
               return (
                 <div key={video._id} className="flex-col">
                   <VideoCard key={video._id} video={video} />
-                  <ButtonPrimary onClick={() => removeFromHistory(video._id)}>
+                  <button
+                    className="item-remove-btn curs-point"
+                    onClick={() => removeFromHistory(video._id)}
+                  >
                     Remove from History
-                  </ButtonPrimary>
+                  </button>
                 </div>
               );
             })}

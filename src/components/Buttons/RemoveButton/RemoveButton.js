@@ -6,10 +6,10 @@ const RemoveButton = ({ video }) => {
   const { removeFromPlaylist } = usePlaylist();
   return (
     <button
-      className="curs-point"
+      className="vid-lib-CTA-icon-container curs-point"
       onClick={() => removeFromPlaylist(video, playlistId)}
     >
-      remove
+      <i className="fa-solid fa-trash"></i>
     </button>
   );
 };

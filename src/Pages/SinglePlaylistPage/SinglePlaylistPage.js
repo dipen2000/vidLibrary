@@ -13,17 +13,22 @@ const SinglePlaylistPage = () => {
   const playlist = playlistState.find((video) => video._id === playlistId);
   return (
     <ShoetubeContainer>
-      <div className="flex-col bord-3-green">
+      <div className="flex-col gap-1 mt-1">
         <h2>
           {playlist.title} ({playlist.videos.length})
         </h2>
         {playlist.videos.length === 0 ? (
-          <div>
-            <p>No videos in this playlist</p>
-            <ButtonPrimary onClick={() => navigate("/")}>Explore</ButtonPrimary>
+          <div className="flex-col justify-space-between-flex align-center-flex gap-1">
+            <h2>No videos in this playlist</h2>
+            <button
+              className="curs-point btn-primary"
+              onClick={() => navigate("/")}
+            >
+              Explore
+            </button>
           </div>
         ) : (
-          <div className="video-listing-grid-container bord-3-green">
+          <div className="video-listing-grid-container">
             {playlist.videos.map((video) => {
               return <SinglePlaylistCard key={video._id} video={video} />;
             })}
