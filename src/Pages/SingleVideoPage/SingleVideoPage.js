@@ -1,6 +1,11 @@
 import { ShoetubeContainer } from "../../components/Wrapper/ShoetubeContainer";
 import { useParams } from "react-router-dom";
 import { useVideos } from "../../context/videoContext";
+import {
+  LikeButton,
+  SaveButton,
+  WatchLaterButton,
+} from "../../components/Buttons";
 import "./SingleVideoPage.css";
 const SingleVideoPage = () => {
   const { videoId } = useParams();
@@ -27,9 +32,9 @@ const SingleVideoPage = () => {
         </div>
 
         <div className="flex-row gap-1">
-          <button>Like</button>
-          <button>Save</button>
-          <button>Watch later</button>
+          <LikeButton video={selectedVideo} />
+          <SaveButton video={selectedVideo} />
+          <WatchLaterButton video={selectedVideo} />
         </div>
       </div>
     </ShoetubeContainer>

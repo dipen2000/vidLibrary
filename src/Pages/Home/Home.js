@@ -7,14 +7,16 @@ import { useCategory } from "../../context/categoryContext";
 import { useVideos } from "../../context/videoContext";
 import { getFinalData } from "../../utils/videos/getFinalData";
 import { useState } from "react";
+import { usePlaylist } from "../../context/playlistContext";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
   const { categoryState, selectedCategory, setSelectedCategory } =
     useCategory();
   const { videoState } = useVideos();
+  const { playlistState } = usePlaylist();
   const finalData = getFinalData(videoState, selectedCategory, searchInput);
-
+  console.log(playlistState);
   return (
     <ShoetubeContainer>
       <div className="flex-col bord-3-green">

@@ -4,12 +4,14 @@ import { ButtonPrimary } from "../Buttons";
 import { useAuth } from "../../context/authContext";
 import { useLiked } from "../../context/likeContext";
 import { useWatchLater } from "../../context/watchLaterContext";
+import { useHistory } from "../../context/historyContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
   const { likedState } = useLiked();
   const { watchLaterState } = useWatchLater();
+  const { historyState } = useHistory();
   return (
     <header className="navbar-sticky">
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -38,7 +40,7 @@ const Navbar = () => {
           </div>
           <div>
             <Link to="/history" className="curs-point">
-              History
+              History ({historyState.length})
             </Link>
           </div>
           <ButtonPrimary
