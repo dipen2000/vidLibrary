@@ -1,5 +1,5 @@
 import "./VideoCard.css";
-import { PlayButton, LikeButton } from "../../Buttons";
+import { PlayButton, LikeButton, WatchLaterButton } from "../../Buttons";
 
 const VideoCard = ({ video }) => {
   const { title, creator, views, img_src, _id } = video;
