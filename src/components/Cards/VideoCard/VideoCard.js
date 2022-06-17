@@ -1,4 +1,6 @@
 import "./VideoCard.css";
+import { Modal } from "../../Modal/Modal";
+import { useModal } from "../../../context/modalContext";
 import {
   PlayButton,
   LikeButton,
@@ -8,6 +10,7 @@ import {
 
 const VideoCard = ({ video }) => {
   const { title, creator, views, img_src, _id } = video;
+  const { isModalShown, setIsModalShown } = useModal();
   return (
     <div className="video-card-container flex-col card-box-shadow">
       <div className="video-thumbnail-container">

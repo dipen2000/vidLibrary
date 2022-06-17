@@ -3,25 +3,29 @@ import { useModal } from "../../context/modalContext";
 import { useState } from "react";
 import { InputField } from "../InputFields";
 import { usePlaylist } from "../../context/playlistContext";
+import { isVideoInCertainPlaylist } from "../../utils/videos/isVideoInCertainPlaylist";
 
 import "./Modal.css";
 const Modal = () => {
   const [isPlaylistFormShown, setIsPlaylistFormShown] = useState(false);
   const [playlistFormInput, setPlaylistFormInput] = useState({});
   const { setIsModalShown, videoForPlaylist } = useModal();
-  const { createPlaylist } = usePlaylist();
+  const { playlistState, createPlaylist, removeFromPlaylist, addToPlaylist } =
+    usePlaylist();
+
   const formInputChangeHandler = (e) => {
     const { name, value } = e.target;
     setPlaylistFormInput((prevState) => ({ ...prevState, [name]: value }));
   };
 
+  console.log(
+    Boolean(isVideoInCertainPlaylist(playlistState[0], videoForPlaylist))
+  );
+
   return (
     <div className="modal-overlay-container flex-row align-center-flex justify-center-flex">
       <div className="modal flex-col bord-3-black gap-1">
         <div className="flex-row align-center-flex justify-flex-end">
-          {/* <button className="curs-point" onClick={() => setIsModalShown(false)}>
-            x
-          </button> */}
           <div
             className="modal-close-icon-container"
             onClick={() => setIsModalShown(false)}
@@ -62,12 +66,39 @@ const Modal = () => {
             </div>
           </form>
         ) : (
-          <button
-            className="add-new-playlist-btn"
-            onClick={() => setIsPlaylistFormShown(true)}
-          >
-            Add a new playlist
-          </button>
+          <div className="flex-col gap-1">
+            <div className="flex-col gap-z-5">
+              {playlistState.map((playlist) => {
+                const isVideoInPlaylist = isVideoInCertainPlaylist(
+                  playlist,
+                  videoForPlaylist
+                );
+                return (
+                  <div
+                    key={playlist._id}
+                    className="flex-row gap-1 align-center-flex"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={isVideoInPlaylist}
+                      onChange={() => {
+                        isVideoInPlaylist
+                          ? removeFromPlaylist(videoForPlaylist, playlist._id)
+                          : addToPlaylist(videoForPlaylist, playlist._id);
+                      }}
+                    />
+                    <span>{playlist.title}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <button
+              className="add-new-playlist-btn"
+              onClick={() => setIsPlaylistFormShown(true)}
+            >
+              Add a new playlist
+            </button>
+          </div>
         )}
       </div>
     </div>

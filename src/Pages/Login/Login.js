@@ -18,8 +18,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const guestLoginCredentials = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "dipenchavda123@gmail.com",
+    password: "dipenchavda123",
   };
 
   const inputChangeHandler = (e) => {

@@ -1,11 +1,11 @@
 import "./SaveButton.css";
 import { useModal } from "../../../context/modalContext";
-import { AddedToPlaylist } from "../../../assets/AddedToPlaylist";
-import { AddToPlaylist } from "../../../assets/AddToPlaylist";
+import { usePlaylist } from "../../../context/playlistContext";
+import { checkIsVideoInPlaylist } from "../../../utils/videos/checkIsVideoInPlaylist";
 const SaveButton = ({ video }) => {
   const { setIsModalShown, setVideoForPlaylist } = useModal();
-  // const isInPlaylist = ?
-  //  // console.log(video);
+  const isVideoInPlaylist = checkIsVideoInPlaylist(video);
+
   return (
     <>
       <span
@@ -15,7 +15,11 @@ const SaveButton = ({ video }) => {
           setIsModalShown(true);
         }}
       >
-        <i className="fa-regular fa-floppy-disk"></i>
+        <i
+          className={`${
+            isVideoInPlaylist ? "fa-solid" : "fa-regular"
+          }  fa-floppy-disk`}
+        ></i>
       </span>
     </>
   );

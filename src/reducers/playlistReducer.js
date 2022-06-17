@@ -1,7 +1,6 @@
 import { ACTIONS } from "../constants/actions";
 
 const getANewPlaylistsArrAfterAddingOrRemovingVideo = (state, playlistObj) => {
-  console.log(playlistObj);
   return state.map((playlist) => {
     return playlist._id === playlistObj._id ? playlistObj : playlist;
   });
