@@ -3,6 +3,22 @@
   --btn-primary-font-color : white;
 }
 
+::-webkit-scrollbar{
+  width : 1.5rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgba(221, 213, 213, 0.998);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--btn-primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(0, 0, 0, 0.813);
+}
+
 .flex-row{
     display : flex;
       flex-direction: row;
