@@ -30,7 +30,7 @@ const History = () => {
             </button>
           </div>
         ) : (
-          <div className="video-listing-grid-container bord-3-green">
+          <div className="video-listing-grid-container">
             {historyState.map((video) => {
               return (
                 <div key={video._id} className="flex-col">
