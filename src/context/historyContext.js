@@ -7,6 +7,7 @@ import { addToHistoryService } from "../services/history/addToHistoryService";
 import { removeFromHistoryService } from "../services/history/removeFromHistoryService";
 import { clearHistoryService } from "../services/history/clearHistoryService";
 import { useAuth } from "./authContext";
+import toast from "react-hot-toast";
 
 const historyContext = createContext();
 
@@ -65,6 +66,16 @@ const HistoryProvider = ({ children }) => {
             type: ACTIONS.SET_HISTORY_LIST,
             payload: { data: data.history },
           });
+          toast("Video removed from history.", {
+            icon: "✅",
+            style: {
+              backgroundColor: "var(--bg-color)",
+              color: "white",
+              borderRadius: "15px",
+              boxShadow:
+                "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+            },
+          });
         }
       } catch (e) {
         console.log(e);
@@ -80,10 +91,19 @@ const HistoryProvider = ({ children }) => {
         const { data, status } = await clearHistoryService(token);
 
         if (status === 200) {
-          // console.log("clear history");
           historyDispatch({
             type: ACTIONS.SET_HISTORY_LIST,
             payload: { data: data.history },
+          });
+          toast("History cleared.", {
+            icon: "✅",
+            style: {
+              backgroundColor: "var(--bg-color)",
+              color: "white",
+              borderRadius: "15px",
+              boxShadow:
+                "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+            },
           });
         }
       } catch (e) {

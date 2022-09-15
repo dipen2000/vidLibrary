@@ -12,10 +12,10 @@ const Playlists = () => {
       <div className="flex-col gap-1 mt-1">
         <h2>Playlists ({playlistState.length})</h2>
         {playlistState.length === 0 ? (
-          <div className="flex-col align-center-flex justify-center-flex gap-1">
+          <div className="flex-col align-center-flex justify-center-flex gap-1 no-playlists-item-container">
             <h2>No playlists here</h2>
             <button
-              className="curs-point btn-primary"
+              className="curs-point btn-primary explore-btn"
               onClick={() => navigate("/")}
             >
               Explore

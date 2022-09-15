@@ -1,10 +1,10 @@
 import { ShoetubeContainer } from "../../components/Wrapper/ShoetubeContainer";
 import { InputField, PasswordField } from "../../components/InputFields";
-import { ButtonPrimary } from "../../components/Buttons";
 import { signupService } from "../../services/auth/signupService";
 import { useAuth } from "../../context/authContext";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import "./Signup.css";
 const Signup = () => {
   const navigate = useNavigate();
@@ -55,9 +55,28 @@ const Signup = () => {
           confirmPassword: "",
         },
       }));
+      toast("Signed up successfully.", {
+        icon: "✅",
+        style: {
+          backgroundColor: "var(--bg-color)",
+          color: "white",
+          borderRadius: "15px",
+          boxShadow:
+            "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+        },
+      });
       navigate("/");
     } catch (e) {
-      console.log(e);
+      toast("Something went wrong.", {
+        icon: "❌",
+        style: {
+          backgroundColor: "var(--bg-color)",
+          color: "white",
+          borderRadius: "15px",
+          boxShadow:
+            "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+        },
+      });
     }
   };
 
@@ -137,7 +156,9 @@ const Signup = () => {
                 </PasswordField>
                 <div className="flex-row justify-center-flex">
                   <div>
-                    <ButtonPrimary>Signup</ButtonPrimary>
+                    <button className="curs-point btn-primary explore-btn">
+                      Signup
+                    </button>
                   </div>
                 </div>
                 {true &&
@@ -146,7 +167,7 @@ const Signup = () => {
                   ) && <p>The passwords you entered does not match.</p>}
                 <div className="flex-row gap-1">
                   <span>New to SHOEDOG?</span>
-                  <Link className="curs-point" to="/login">
+                  <Link className="curs-point clr-primary" to="/login">
                     Login
                   </Link>
                 </div>

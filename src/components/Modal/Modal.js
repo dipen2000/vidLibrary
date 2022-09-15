@@ -18,13 +18,9 @@ const Modal = () => {
     setPlaylistFormInput((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  console.log(
-    Boolean(isVideoInCertainPlaylist(playlistState[0], videoForPlaylist))
-  );
-
   return (
     <div className="modal-overlay-container flex-row align-center-flex justify-center-flex">
-      <div className="modal flex-col bord-3-black gap-1">
+      <div className="modal flex-col modal-bord gap-1">
         <div className="flex-row align-center-flex justify-flex-end">
           <div
             className="modal-close-icon-container"
@@ -33,7 +29,7 @@ const Modal = () => {
             <i className="fa-solid fa-xmark"></i>
           </div>
         </div>
-        <h3>Playlist</h3>
+        <h3 className="playlist-heading">Playlist</h3>
         {isPlaylistFormShown ? (
           <form
             onSubmit={(e) => {
@@ -62,7 +58,9 @@ const Modal = () => {
                 value={playlistFormInput.description}
                 required={true}
               />
-              <button className="add-new-playlist-btn">Create playlist</button>
+              <button className="add-new-playlist-btn explore-btn">
+                Create playlist
+              </button>
             </div>
           </form>
         ) : (
@@ -93,7 +91,7 @@ const Modal = () => {
               })}
             </div>
             <button
-              className="add-new-playlist-btn"
+              className="add-new-playlist-btn explore-btn"
               onClick={() => setIsPlaylistFormShown(true)}
             >
               Add a new playlist

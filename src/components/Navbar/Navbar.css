@@ -1,15 +1,30 @@
 .navbar{
-    border : 5px solid black;
+    /* border : 5px solid black; */
     padding : 1rem;
-    font-family: var(--component-heading-font);
-    background-color : white;
-    
+    font-family: 'Josefin Sans', sans-serif;
+    background-color : var(--primary-color);
+    letter-spacing : 1px;
+    color : black;
 }
 
 .navbar-sticky{
     position: sticky;
     top : 0;
     z-index: 800;
+}
+
+.nav-icon-badge-container{
+    top : 2px;
+    right : 1px;
+    font-size: 1.1rem;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    width : 18px;
+    height : 12px;
+    color : var(--btn-primary-font-color);
+    border-radius: 30%;
+    background-color : var(--bg-color);
 }
 
 .mid-nav-links-container{
@@ -22,4 +37,11 @@
 
 .nav-link{
     cursor : pointer;
+}
+
+.nav-icon-container{
+    width : 35px;
+    height : 35px;
+    border : 2px solid var(--bg-color); 
+    border-radius: 5px;
 }

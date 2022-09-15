@@ -40,6 +40,4 @@
 
 .view-playlist-btn{
     padding : 0.8rem 1rem;
-    font-family: var(--component-heading-font);
-    background-color : var(--btn-primary-font-color);  
 }

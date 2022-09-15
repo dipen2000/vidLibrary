@@ -7,7 +7,6 @@ const SearchBar = ({ onChange, value }) => {
           <i className="fa-solid fa-magnifying-glass search-icon"></i>
         </div>
       </div>
-
       <input
         type="text"
         placeholder="Search"

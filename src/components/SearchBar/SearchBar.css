@@ -3,18 +3,20 @@
 }
 
 .search-icon{
-    /* border : 3px solid green; */
     font-size : 2rem;
+    color : var(--primary-color);
 }
 .searchbar{
-    padding : 0.8rem 0.5rem;
+    padding : 0.8rem 1rem;
+    background-color : var(--card-bg);
     flex-grow: 1;
-    outline : none;
-    border : 3px solid black;
+    color : var(--primary-color);
     font-family: var(--component-heading-font);
+    border-radius: 15px;
+    outline : none;
+    border : 2px solid var(--primary-color);
 }
 
 .icon-parent-container{
-    /* border : 3px solid green; */
     padding : 0 1rem;
 }

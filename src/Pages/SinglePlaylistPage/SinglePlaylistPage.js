@@ -18,10 +18,10 @@ const SinglePlaylistPage = () => {
           {playlist.title} ({playlist.videos.length})
         </h2>
         {playlist.videos.length === 0 ? (
-          <div className="flex-col justify-space-between-flex align-center-flex gap-1">
+          <div className="flex-col justify-center-flex align-center-flex gap-1 no-playlist-item-container">
             <h2>No videos in this playlist</h2>
             <button
-              className="curs-point btn-primary"
+              className="curs-point btn-primary explore-btn"
               onClick={() => navigate("/")}
             >
               Explore

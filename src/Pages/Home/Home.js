@@ -23,8 +23,12 @@ const Home = () => {
         <div className="chip-section flex-row align-center-flex gap-1">
           <Chip
             style={{
-              backgroundColor: selectedCategory === "All" ? "black" : "",
-              color: selectedCategory === "All" ? "white" : "black",
+              backgroundColor:
+                selectedCategory === "All" ? "var(--primary-color)" : "",
+              color:
+                selectedCategory === "All"
+                  ? "var(--bg-color)"
+                  : "var(--primary-color)",
             }}
             onClick={() => setSelectedCategory("All")}
           >
@@ -36,11 +40,13 @@ const Home = () => {
                 key={category._id}
                 style={{
                   backgroundColor:
-                    selectedCategory === category.categoryName ? "black" : "",
+                    selectedCategory === category.categoryName
+                      ? "var(--primary-color)"
+                      : "",
                   color:
                     selectedCategory === category.categoryName
-                      ? "white"
-                      : "black",
+                      ? "var(--bg-color)"
+                      : "var(--primary-color)",
                 }}
                 onClick={() => setSelectedCategory(category.categoryName)}
               >
@@ -49,7 +55,7 @@ const Home = () => {
             );
           })}
         </div>
-        <div className="searchbar-section bord-3-black">
+        <div className="searchbar-section">
           <SearchBar
             onChange={(e) => setSearchInput(e.target.value)}
             value={searchInput}

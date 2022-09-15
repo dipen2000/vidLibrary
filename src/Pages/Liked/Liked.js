@@ -12,17 +12,17 @@ const Liked = () => {
       <div className="flex-col  gap-1 mt-1">
         <h2>Liked videos ({likedState.length})</h2>
         {likedState.length === 0 ? (
-          <div className="flex-col align-center-flex justify-center-flex gap-1">
+          <div className="flex-col align-center-flex justify-center-flex gap-1 no-liked-items-container">
             <h2>No liked videos</h2>
             <button
-              className="curs-point btn-primary"
+              className="curs-point btn-primary explore-btn"
               onClick={() => navigate("/")}
             >
               Explore
             </button>
           </div>
         ) : (
-          <div className="video-listing-grid-container bord-3-green">
+          <div className="video-listing-grid-container">
             {likedState.map((video) => {
               return <VideoCard key={video._id} video={video} />;
             })}

@@ -8,7 +8,7 @@ import {
 const SinglePlaylistCard = ({ video }) => {
   const { title, creator, views, img_src, _id } = video;
   return (
-    <div className="video-card-container flex-col card-box-shadow">
+    <div className="video-card-container flex-col card-box-shadow-green-vid-lib">
       <div className="video-thumbnail-container">
         <img className="img-resp" src={img_src} alt={`${title} ${creator}`} />
       </div>

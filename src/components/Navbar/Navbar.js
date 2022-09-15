@@ -21,25 +21,52 @@ const Navbar = () => {
           <h2>SHOETUBE</h2>
         </Link>
         <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
-          <div>
-            <Link to="/playlists" className="curs-point">
-              Playlists {playlistState.length}
-            </Link>
+          <div
+            className="flex-row align-center-flex justify-center-flex nav-icon-container card-box-shadow curs-point relative"
+            onClick={() => {
+              navigate("/playlists");
+            }}
+          >
+            <i className={`fa-solid fa-floppy-disk`}></i>
+            {playlistState.length > 0 && (
+              <div className="nav-icon-badge-container absolute">
+                {playlistState.length}
+              </div>
+            )}
           </div>
-          <div>
-            <Link to="/liked" className="curs-point">
-              Liked {likedState.length}
-            </Link>
+          <div
+            className="flex-row align-center-flex justify-center-flex nav-icon-container card-box-shadow curs-point relative"
+            onClick={() => {
+              navigate("/liked");
+            }}
+          >
+            <i className={`fa-solid fa-heart`}></i>
+            {likedState.length > 0 && (
+              <div className="nav-icon-badge-container absolute">
+                {likedState.length}
+              </div>
+            )}
           </div>
-          <div>
-            <Link to="/watch-later" className="curs-point">
-              Watch later {watchLaterState.length}
-            </Link>
+          <div
+            className="flex-row align-center-flex justify-center-flex nav-icon-container card-box-shadow curs-point relative"
+            onClick={() => {
+              navigate("/watch-later");
+            }}
+          >
+            <i className={`fa-solid fa-clock`}></i>
+            {watchLaterState.length > 0 && (
+              <div className="nav-icon-badge-container absolute">
+                {watchLaterState.length}
+              </div>
+            )}
           </div>
-          <div>
-            <Link to="/history" className="curs-point">
-              History {historyState.length}
-            </Link>
+          <div
+            className="flex-row align-center-flex justify-center-flex nav-icon-container card-box-shadow curs-point"
+            onClick={() => {
+              navigate("/history");
+            }}
+          >
+            <i className={`fa-solid fa-clock-rotate-left`}></i>
           </div>
           <button
             className="curs-point btn-primary"

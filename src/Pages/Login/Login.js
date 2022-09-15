@@ -6,6 +6,7 @@ import { ButtonPrimary } from "../../components/Buttons/ButtonPrimary/ButtonPrim
 import { loginService } from "../../services/auth/loginService";
 import { useAuth } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [inputData, setInputData] = useState({
@@ -49,9 +50,29 @@ const Login = () => {
         ...prevData,
         input: { email: "", password: "" },
       }));
+      toast("Logged in successfully.", {
+        icon: "✅",
+        style: {
+          backgroundColor: "var(--bg-color)",
+          color: "white",
+          borderRadius: "15px",
+          boxShadow:
+            "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+        },
+      });
       navigate("/");
     } catch (e) {
       console.error(e);
+      toast("wrong credentials.", {
+        icon: "❌",
+        style: {
+          backgroundColor: "var(--bg-color)",
+          color: "white",
+          borderRadius: "15px",
+          boxShadow:
+            "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+        },
+      });
     }
   };
   return (
@@ -92,13 +113,16 @@ const Login = () => {
                 </PasswordField>
                 <div className="flex-col">
                   <div className="flex-row justify-center-flex">
-                    <ButtonPrimary>Login</ButtonPrimary>
+                    <button className="curs-point btn-primary explore-btn">
+                      Login
+                    </button>
                   </div>
                   <div className="flex-row justify-center-flex">
                     <span>or</span>
                   </div>
                   <div className="flex-row justify-center-flex">
-                    <ButtonPrimary
+                    <button
+                      className="curs-point btn-primary explore-btn"
                       onClick={() => {
                         setInputData((prevData) => ({
                           ...prevData,
@@ -107,12 +131,16 @@ const Login = () => {
                       }}
                     >
                       Guest Login
-                    </ButtonPrimary>
+                    </button>
                   </div>
                 </div>
                 <div className="flex-row gap-1">
                   <span>New to SHOEDOG?</span>
-                  <Link to="/signup" className="curs-point">
+                  <Link
+                    to="/signup"
+                    className="curs-point"
+                    style={{ color: "var(--primary-color)" }}
+                  >
                     Signup
                   </Link>
                 </div>

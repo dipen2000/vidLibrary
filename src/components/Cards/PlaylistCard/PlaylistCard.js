@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 const PlaylistCard = ({ playlist }) => {
   const navigate = useNavigate();
   const { removePlaylist } = usePlaylist();
-  console.log(playlist.videos[0]?.img_src);
   return (
-    <div className="playlist-card-container flex-col  card-box-shadow">
+    <div className="playlist-card-container flex-col card-box-shadow-green-vid-lib">
       <div className="playlist-thumbnail-container">
         {playlist.videos.length === 0 ? (
           <div className="playlist-thumbnail-section">
@@ -20,14 +19,11 @@ const PlaylistCard = ({ playlist }) => {
           />
         )}
         <div className="flex-col gap-1 playlist-side-overlay-section align-center-flex justify-center-flex">
-          <h4
-            className="playlist-video-count"
-            style={{ color: playlist.videos.length === 0 ? "black" : "white" }}
-          >
+          <h4 className="playlist-video-count" style={{ color: "white" }}>
             {playlist.videos.length}+
           </h4>
           <button
-            className="view-playlist-btn curs-point"
+            className="view-playlist-btn curs-point explore-btn"
             onClick={() => navigate(`/playlist/${playlist._id}`)}
           >
             View

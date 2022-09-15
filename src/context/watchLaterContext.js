@@ -6,6 +6,7 @@ import { removeFromWatchLaterService } from "../services/watchLater/removeFromWa
 import { moveToWatchLaterService } from "../services/watchLater/moveToWatchLaterService";
 import { useAuth } from "./authContext";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const watchLaterContext = createContext();
 
 const useWatchLater = () => useContext(watchLaterContext);
@@ -50,6 +51,16 @@ const WatchLaterProvider = ({ children }) => {
               type: ACTIONS.SET_WATCH_LATER_LIST,
               payload: { data: data.watchlater },
             });
+            toast("Video removed from watch later.", {
+              icon: "✅",
+              style: {
+                backgroundColor: "var(--bg-color)",
+                color: "white",
+                borderRadius: "15px",
+                boxShadow:
+                  "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+              },
+            });
           }
         } catch (e) {
           console.log(e);
@@ -62,6 +73,16 @@ const WatchLaterProvider = ({ children }) => {
             watchLaterDispatch({
               type: ACTIONS.SET_WATCH_LATER_LIST,
               payload: { data: data.watchlater },
+            });
+            toast("Video added to watch later.", {
+              icon: "✅",
+              style: {
+                backgroundColor: "var(--bg-color)",
+                color: "white",
+                borderRadius: "15px",
+                boxShadow:
+                  "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+              },
             });
           }
         } catch (e) {

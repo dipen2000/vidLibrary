@@ -25,7 +25,7 @@ const SingleVideoPage = () => {
             ></iframe>
           </div>
         </div>
-        <div className="">
+        <div className="single-video-desc-container">
           <div className="flex-col single-video-details">
             <h2>{title}</h2>
             <h3>by {creator}</h3>

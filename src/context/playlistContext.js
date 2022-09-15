@@ -6,7 +6,7 @@ import { createPlaylistService } from "../services/playlist/createPlaylistServic
 import { removePlaylistService } from "../services/playlist/removePlaylistService";
 import { addToPlaylistService } from "../services/playlist/addToPlaylistService";
 import { removeFromPlaylistService } from "../services/playlist/removeFromPlaylistService";
-
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./authContext";
 
@@ -52,6 +52,16 @@ const PlaylistProvider = ({ children }) => {
             type: ACTIONS.ADD_TO_PLAYLIST,
             payload: { data: data.playlist },
           });
+          toast("Video added to playlist.", {
+            icon: "✅",
+            style: {
+              backgroundColor: "var(--bg-color)",
+              color: "white",
+              borderRadius: "15px",
+              boxShadow:
+                "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+            },
+          });
         }
       } catch (e) {
         console.log(e);
@@ -75,6 +85,16 @@ const PlaylistProvider = ({ children }) => {
             type: ACTIONS.REMOVE_FROM_PLAYLIST,
             payload: { data: data.playlist },
           });
+          toast("Video removed from playlist.", {
+            icon: "✅",
+            style: {
+              backgroundColor: "var(--bg-color)",
+              color: "white",
+              borderRadius: "15px",
+              boxShadow:
+                "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+            },
+          });
         }
       } catch (e) {
         console.log(e);
@@ -85,8 +105,6 @@ const PlaylistProvider = ({ children }) => {
   };
 
   const createPlaylist = async (formInput, video) => {
-    // console.log(video);
-    // console.log(formInput);
     if (isAuth) {
       try {
         const { data, status } = await createPlaylistService(token, formInput);
@@ -97,12 +115,10 @@ const PlaylistProvider = ({ children }) => {
             payload: { data: data.playlists },
           });
         }
-        // console.log(video);
 
         if (video) {
-          // console.log(video);
           const playlistId = data.playlists[data.playlists.length - 1]._id;
-          // console.log(playlistId);
+
           addToPlaylist(video, playlistId);
         }
       } catch (e) {
@@ -122,6 +138,16 @@ const PlaylistProvider = ({ children }) => {
           playlistDispatch({
             type: ACTIONS.SET_PLAYLIST,
             payload: { data: data.playlists },
+          });
+          toast("Playlist removed.", {
+            icon: "✅",
+            style: {
+              backgroundColor: "var(--bg-color)",
+              color: "white",
+              borderRadius: "15px",
+              boxShadow:
+                "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+            },
           });
         }
       } catch (e) {

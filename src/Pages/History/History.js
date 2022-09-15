@@ -13,17 +13,17 @@ const History = () => {
         <div className="flex-row justify-space-between-flex align-center-flex">
           <h2>Videos in history ({historyState.length})</h2>
           <button
-            className="curs-point btn-primary clear-history-btn"
+            className="curs-point btn-primary clear-history-btn explore-btn"
             onClick={() => clearHistory()}
           >
             Clear History
           </button>
         </div>
         {historyState.length === 0 ? (
-          <div className="flex-col align-center-flex justify-center-flex gap-1">
+          <div className="flex-col align-center-flex justify-center-flex gap-1 no-history-item-container">
             <h2>No videos history</h2>
             <button
-              className="curs-point btn-primary"
+              className="curs-point btn-primary explore-btn"
               onClick={() => navigate("/")}
             >
               Explore

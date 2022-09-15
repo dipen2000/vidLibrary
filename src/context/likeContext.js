@@ -6,6 +6,7 @@ import { ACTIONS } from "../constants/actions";
 import { useNavigate } from "react-router-dom";
 import { dislikeVideoService } from "../services/liked/dislikeVideoService";
 import { likeVideoService } from "../services/liked/likeVideoService";
+import toast from "react-hot-toast";
 
 const likedContext = createContext();
 
@@ -46,6 +47,16 @@ const LikedProvider = ({ children }) => {
               type: ACTIONS.SET_LIKED_LIST,
               payload: { data: data.likes },
             });
+            toast("Video removed from liked.", {
+              icon: "✅",
+              style: {
+                backgroundColor: "var(--bg-color)",
+                color: "white",
+                borderRadius: "15px",
+                boxShadow:
+                  "0 10px 15px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+              },
+            });
           }
         } catch (e) {
           console.log(e);
@@ -58,6 +69,16 @@ const LikedProvider = ({ children }) => {
             likedDispatch({
               type: ACTIONS.SET_LIKED_LIST,
               payload: { data: data.likes },
+            });
+            toast("Video added to liked.", {
+              icon: "✅",
+              style: {
+                backgroundColor: "var(--bg-color)",
+                color: "white",
+                borderRadius: "15px",
+                boxShadow:
+                  "0 8px 8px rgba(36, 245, 81, 0.587), 0 5px 5px rgba(36, 245, 81, 0.587)",
+              },
             });
           }
         } catch (e) {

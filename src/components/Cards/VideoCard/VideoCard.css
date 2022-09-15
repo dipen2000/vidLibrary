@@ -1,16 +1,22 @@
 .video-card-container{
     width : 30rem;
+    border-radius: 10px;
+    background-color : var(--card-bg);
+    color : rgba(248, 248, 255, 0.737);
+}
+
+.vid-card-details-container{
+    padding : 1rem;
+    
 }
 
 .video-thumbnail-container{
     height : 15rem;
 }
 
-.video-details-container{
-    padding : 0.5rem;
+
+.video-thumbnail-container img{
+    border-radius: 10px;
 }
 
-.video-btn-CTA-container{
-    padding : 0.5rem;
-}
 

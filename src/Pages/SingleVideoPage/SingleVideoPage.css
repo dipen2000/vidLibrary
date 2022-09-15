@@ -3,6 +3,10 @@
     height : 45rem;
 }
 
+.single-video-desc-container{
+    width : 60%;
+}
+
 .single_page-video{
     width : 100%;
     height : 100%;

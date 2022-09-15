@@ -1,3 +1,7 @@
 .clear-history-btn{
     padding : 0.8rem;
 }
+
+.no-history-item-container{
+    height : 30rem;
+}
